@@ -256,6 +256,19 @@ suite = {
                 "GRAALPYTHON",
             ],
         },
+
+        "com.nvidia.rapids.gpulang": {
+            "subDir": "gpulang",
+            "output": "gpulang/output",
+            "license": ["Apache-2.0"],
+            "sourceDirs": ["src"],
+            "javaCompliance": "1.8",
+            "annotationProcessors": ["truffle:TRUFFLE_DSL_PROCESSOR"],
+            "dependencies": [
+                "truffle:TRUFFLE_API",
+                "sdk:GRAAL_SDK",
+            ]
+        },
     },
 
     "licenses": {
@@ -288,6 +301,7 @@ suite = {
 
         "GRAALPYTHON": {
             "dependencies": [
+                "com.nvidia.rapids.gpulang",
                 "com.oracle.graal.python",
             ],
             "distDependencies": [
